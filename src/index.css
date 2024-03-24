@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'regular';
+    src: url('./assets/font.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-family: 'regular', sans-serif;
+}
+
+.container {
+    background-color: aliceblue;
+}
