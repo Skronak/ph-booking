@@ -8,7 +8,6 @@ import {CustomCalendar} from "../../Calendar/CustomCalendar.tsx";
 const Header = () => {
   return (
     <div>
-      <Container>
         <Row style={{ flexDirection: "row-reverse"}}>
           <Col md={6}>
             <div className="head_left">
@@ -27,50 +26,6 @@ const Header = () => {
             </div>
           </Col>
         </Row>
-        <CustomCalendar/>
-          <Row>
-              <Col>
-            <div className="box">
-              <div className="w-100 feature">
-                <span className="material-symbols-outlined">bed</span>
-                <div>2 chambres</div>
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <div className="box">
-              <div className="w-100 feature">
-                <span className="material-symbols-outlined">pool</span>
-                <div>Piscines</div>
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <div className="box">
-              <div className="boxContianer d-flex">
-                <div className="w-100 feature">
-                  <span className="material-symbols-outlined">shower</span>
-                  <div>2 salles de bains</div>
-                </div>
-                <div className="w-100 feature">
-                  <span className="material-symbols-outlined">flatware</span>
-                  <div>Cuisines</div>
-                </div>
-              </div>
-            </div>
-          </Col>
-        </Row>
-
-          <h2>Gallery</h2>
-          <h2>Google Map</h2>
-        <div className="headerFoot my-4">
-          <HeaderFoot />
-        </div>
-      </Container>
     </div>
 
   )

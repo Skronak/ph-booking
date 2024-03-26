@@ -1,11 +1,16 @@
-import HeaderMain from "../components/HeaderMain/HeaderMain.tsx";
 import Footer from "../components/Footer/Footer.tsx";
+import Container from "react-bootstrap/Container";
+import Header from "../components/HeaderMain/Header/Header.tsx";
+import Content from "../components/Content/Content.tsx";
 
 const Home = () => {
   return (
     <div>
-        <HeaderMain/>
+      <Container>
+        <Header/>
+        <Content/>
         <Footer/>
+      </Container>
     </div>
   )
 }
