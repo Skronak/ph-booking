@@ -1,0 +1,6 @@
+.react-calendar__tile--rangeEnd {
+    border-radius: 0 40% 40% 0;
+}
+.react-calendar__tile--rangeStart {
+    border-radius: 40% 0 0 40%;
+}

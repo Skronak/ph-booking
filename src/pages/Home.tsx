@@ -1,7 +1,7 @@
 import Footer from "../components/Footer/Footer.tsx";
 import Container from "react-bootstrap/Container";
-import Header from "../components/HeaderMain/Header/Header.tsx";
 import Content from "../components/Content/Content.tsx";
+import Header from "../components/Header/Header.tsx";
 
 const Home = () => {
   return (

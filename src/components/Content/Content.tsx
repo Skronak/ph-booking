@@ -2,12 +2,14 @@ import {Col, Container, Row} from 'react-bootstrap';
 import './content.css';
 import {CustomCalendar} from "../Calendar/CustomCalendar.tsx";
 import SectionVoyage from "./SectionVoyage/SectionVoyage.tsx";
+import DateRangeCalendar from "../Calendar/DateRangeCalendar.tsx";
 
 const Content = () => {
   return (
     <div>
       <Container>
-        <CustomCalendar/>
+{/*        <CustomCalendar/>*/}
+        <DateRangeCalendar/>
         <button>Reserver votre sejour</button>
           <Row>
               <Col>
