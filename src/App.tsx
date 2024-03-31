@@ -1,11 +1,12 @@
 import Home from "./pages/Home.tsx";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
-  return (
-    <div>
-      <Home/>
-    </div>
-  )
+    return (
+        <BrowserRouter>
+        <Home/>
+        </BrowserRouter>
+    )
 }
 
 export default App

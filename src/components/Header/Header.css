@@ -1,36 +1,37 @@
-.head_left .h_subTitle{
-    background: #FFEEDE;
-    color: #FB9431;
-    font-weight: bold;
-    padding: 7px 20px;
-    border-radius: 20px;
+.hero-image {
+    /*
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/background2.jpg");
+    */
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
-.h_title h1{
-    font-size: 50px;
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
-.contact_btn{
-    border:1px solid #fb1c15 !important;
-    background-color: transparent !important;
-    color: #fb1c15 !important; 
-    font-weight: bold !important;
-    text-transform: capitalize;
+
+.hero-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
 }
-.head_right .imageContainer{
-    width: 100%;
-    height: 100%;
-}
-.imageContainer .head_rightImg{
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-}
-.curve{
-    width: 8rem;
-    height: 100%;
-    object-fit: cover;
-}
-.starr{
-    color: #FB9431;
+
+.hero-text button:hover {
+    background-color: #555;
+    color: white;
 }
 
 .feature {
@@ -41,6 +42,7 @@
         margin: 0.5em;
 }
 
-.head_right {
+/*.head_right {
     margin-top: 20%;
-}
+}*/
+
