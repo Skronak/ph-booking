@@ -49,3 +49,8 @@
     height: 200px;
     overflow: hidden;
 }
+
+.react-daterange-picker {
+    background-color: white;
+    height: 100%;
+}

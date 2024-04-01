@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
 
-export default function SwipeGallery(props) {
+type Props = {
+    galleryID: string,
+    images: {
+        largeURL: string,
+        width: number,
+        height: number,
+        thumbnailURL: string
+    }[],
+}
+export default function SwipeGallery(props: Props) {
     useEffect(() => {
-        let lightbox = new PhotoSwipeLightbox({
+        let lightbox: PhotoSwipeLightbox | null = new PhotoSwipeLightbox({
             gallery: '#' + props.galleryID,
             children: 'a',
             pswpModule: () => import('photoswipe'),
@@ -15,7 +24,7 @@ export default function SwipeGallery(props) {
         lightbox.init();
 
         return () => {
-            lightbox.destroy();
+            lightbox && lightbox.destroy();
             lightbox = null;
         };
     }, []);

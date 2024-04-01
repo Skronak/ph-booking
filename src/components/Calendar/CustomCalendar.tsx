@@ -1,10 +1,7 @@
-import {useState} from "react";
-import Calendar from "react-calendar";
 import './calendar-style.css';
 
-type Props = {}
-
-export function CustomCalendar(props: Props) {
+export function CustomCalendar() {
+/*
     const [date, setDate] = useState([new Date(), new Date()]);
     const tileDisabled = ({ date }: { date: Date }) => {
         return (
@@ -12,10 +9,12 @@ export function CustomCalendar(props: Props) {
             date.getDay() === 6
         );
     };
+*/
 
 
     return (
         <div className={"custom-calendar"}>
+{/*
             <p>{date[1] ? `Votre sejour du ${date[0].toDateString()} au ${date[1].toDateString()}` : `Votre sejour du ${date[0].toDateString()}`}</p>
             <div className='calendar-container'>
                 <Calendar
@@ -29,6 +28,7 @@ export function CustomCalendar(props: Props) {
                     tileDisabled={tileDisabled}
                 />
             </div>
+*/}
         </div>
     )
 

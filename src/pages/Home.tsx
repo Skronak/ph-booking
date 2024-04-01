@@ -1,6 +1,5 @@
 import Footer from "../components/Footer/Footer.tsx";
-import Container from "react-bootstrap/Container";
-import Content from "../components/Content/Content.tsx";
+import Main from "../components/Content/Main.tsx";
 import Header from "../components/Header/Header.tsx";
 import "./home.css"
 
@@ -8,9 +7,7 @@ const Home = () => {
     return (
         <>
             <Header/>
-            <Container fluid="md">
-                <Content/>
-            </Container>
+            <Main/>
             <Footer/>
         </>
     )

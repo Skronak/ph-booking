@@ -1,13 +1,15 @@
 import {Col, Row} from 'react-bootstrap';
 import './sectionVoyage.css';
-import food from '../../../assets/c.png';
+/*
+import food from 'src/assets/c.png';
+*/
 
 const SectionVoyage = () => {
   return (
     <div>
       <Row>
         <Col md={6}>
-          <img src={food} alt="header-footer" className='img-fluid'/>
+{/*          <img src={food} alt="header-footer" className='img-fluid'/>*/}
         </Col>
         <Col md={6}>
           <div className="h_ftright">
