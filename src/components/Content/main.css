@@ -45,12 +45,15 @@
     margin-top: 20%;
 }
 
-#vuez-home-gallery {
-    height: 200px;
-    overflow: hidden;
-}
-
 .react-daterange-picker {
     background-color: white;
     height: 100%;
+}
+
+.section-uneven {
+    padding: 1em 0;
+}
+.section-even {
+    background-color: white;
+    padding: 1em 0;
 }

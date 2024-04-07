@@ -1,35 +1,46 @@
 import './calendar-style.css';
+import {SetStateAction, useState} from "react";
+// @ts-expect-error
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import {Button, Col, Container, Row} from "react-bootstrap";
 
 export function CustomCalendar() {
-/*
-    const [date, setDate] = useState([new Date(), new Date()]);
-    const tileDisabled = ({ date }: { date: Date }) => {
-        return (
-            date.getDay() === 0 ||
-            date.getDay() === 6
-        );
-    };
-*/
-
-
+    const [startDate, setStartDate] = useState(new Date("2014/02/08"));
+    const [endDate, setEndDate] = useState(new Date("2014/02/10"));
     return (
-        <div className={"custom-calendar"}>
-{/*
-            <p>{date[1] ? `Votre sejour du ${date[0].toDateString()} au ${date[1].toDateString()}` : `Votre sejour du ${date[0].toDateString()}`}</p>
-            <div className='calendar-container'>
-                <Calendar
-                    onChange={setDate}
-                    value={date}
-                    selectRange={true}
-                    minDate={new Date()}
-                    allowPartialRange
-                    minDetail={"year"}
-                    returnValue={"range"}
-                    tileDisabled={tileDisabled}
-                />
-            </div>
-*/}
+        <div style={{backgroundColor: "white", padding: "1em 0"}}>
+            <Container>
+                <Row>
+                    <Col>
+                        <label htmlFor="departure">Votre séjour</label></Col>
+                    <Col md={3}>
+                        <DatePicker
+                            showIcon
+                            selected={startDate}
+                            onChange={(date: SetStateAction<Date>) => setStartDate(date)}
+                            selectsStart
+                            startDate={startDate}
+                            endDate={endDate}
+                        />
+                    </Col>
+                    <Col md={3}>
+                        <DatePicker
+                            showIcon
+                            selected={endDate}
+                            onChange={(date: SetStateAction<Date>) => setEndDate(date)}
+                        selectsEnd
+                        startDate={startDate}
+                        endDate={endDate}
+                        minDate={startDate}
+                    />
+                </Col>
+                <Col md={3}>
+                    <Button variant="primary">Reserver votre sejour</Button>
+                </Col>
+            </Row>
+        </Container>
         </div>
-    )
+    );
 
 }

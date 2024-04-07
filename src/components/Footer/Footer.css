@@ -4,8 +4,10 @@ ul {
 }
 .footer-section {
   /* background: #151414; */
+  /*
   background: rgb(255,227,227);
   background: linear-gradient(29deg, #ffe3e3 0%, #ffffff 35%);
+  */
   position: relative;
 }
 .footer-cta {

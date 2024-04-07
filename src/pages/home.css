@@ -2,3 +2,7 @@
     padding: unset !important;
     overflow-x: hidden;
 }
+
+.home-container {
+ background-color: antiquewhite;
+}

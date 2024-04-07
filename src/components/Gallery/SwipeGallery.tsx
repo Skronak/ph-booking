@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
+import './gallery.css';
 
 type Props = {
-    galleryID: string,
     images: {
         largeURL: string,
         width: number,
@@ -14,7 +14,7 @@ type Props = {
 export default function SwipeGallery(props: Props) {
     useEffect(() => {
         let lightbox: PhotoSwipeLightbox | null = new PhotoSwipeLightbox({
-            gallery: '#' + props.galleryID,
+            gallery: '#section-gallery',
             children: 'a',
             pswpModule: () => import('photoswipe'),
             showHideAnimationType: 'zoom',
@@ -30,13 +30,13 @@ export default function SwipeGallery(props: Props) {
     }, []);
 
     return (
-        <div className="pswp-gallery" id={props.galleryID}>
+        <div id="section-gallery">
             {props.images.map((image, index) => (
                 <a
                     href={image.largeURL}
                     data-pswp-width={image.width}
                     data-pswp-height={image.height}
-                    key={props.galleryID + '-' + index}
+                    key={'picture-' + index}
                     target="_blank"
                     rel="noreferrer"
                 >
