@@ -24,7 +24,7 @@ export default function SectionHouse() {
                         <div className={"col-12"}>
                             <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
                                 <span className="material-symbols-outlined">bed</span>
-                                <div>2 {t("section.house.features.bed")}</div>
+                                <div>{t("section.house.features.bed")}</div>
                             </Card>
                         </div>
                         <div className={"col-12"}>
