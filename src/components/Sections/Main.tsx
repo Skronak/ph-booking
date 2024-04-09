@@ -1,7 +1,7 @@
 import './main.css';
 import SectionVoyage from "./SectionVoyage/SectionVoyage.tsx";
 import {CustomCalendar} from "../Calendar/CustomCalendar.tsx";
-import {GoogleMap} from "../GoogleMap/GoogleMap.tsx";
+import {GoogleMap} from "./GoogleMap/GoogleMap.tsx";
 import SectionHouse from "./SectionHouse/SectionHouse.tsx";
 import SectionGallery from "./SectionGallery/SectionGallery.tsx";
 

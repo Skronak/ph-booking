@@ -1,11 +1,14 @@
 import {Col, Container, Row} from 'react-bootstrap';
 import './sectionVoyage.css';
 import food from "/c.png";
+import {useTranslation} from "react-i18next";
 
 const SectionVoyage = () => {
+    const [t] = useTranslation();
+
     return (
         <Container>
-            <h2 className={"section-title"}>Explore the surroundings</h2>
+            <h2 className={"section-title"}>{t("section.surrounding.title")}</h2>
             <Row>
                 <div className="containerBox">
                     <p className='text-secondary my-4'>Located at the mouth of the valley and the beach of El

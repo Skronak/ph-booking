@@ -1,0 +1,45 @@
+{
+  "menu": {
+    "house": "The House",
+    "gallery": "Pictures",
+    "location": "Location",
+    "surroundings": "Surroundings",
+    "contact": "Contact"
+  },
+  "banner": {
+    "title": "A dream stay in El Nido awaits you"
+  },
+  "calendar": {
+    "from": "from",
+    "to": "to",
+    "book": "Book Now !"
+  },
+  "section": {
+    "house": {
+      "title": "The House",
+      "accomodation": "Accomodations",
+      "services": "Additionnal services",
+      "features": {
+        "bed": "2 bedrooms",
+        "pool": "Pool",
+        "bathroom": "Bathroom",
+        "kitchen": "Fitted kitchen",
+        "people": "4 people",
+        "wifi": "Wifi",
+        "breakfast": "Breakfast included",
+        "air": "Air conditioner",
+        "shower": "Hot shower"
+      }
+    },
+    "gallery": {
+      "title": "Pictures"
+    },
+    "location": {
+      "title": "House Location"
+    },
+    "surrounding": {
+      "title": "Explore the surrondings"
+    }
+  },
+  "footer": "Copyright © 2023, All Right Reserved"
+}

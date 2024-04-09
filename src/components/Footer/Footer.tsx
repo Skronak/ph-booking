@@ -1,6 +1,9 @@
 import './Footer.css';
+import {useTranslation} from "react-i18next";
 
 const Footer = () => {
+    const [t] = useTranslation();
+
     return (
         <div id={"section-contact"}>
             <footer className="footer-section">
@@ -49,7 +52,7 @@ const Footer = () => {
                         <div className="row">
                             <div className="col-xl-6 col-lg-6 text-center text-lg-left">
                                 <div className="copyright-text">
-                                    <p>Copyright © 2023, All Right Reserved <a href="#">Vuez Cocoon</a></p>
+                                    <p>Copyright © 2023, {t("footer")} <a href="#">Vuez Cocoon</a></p>
                                 </div>
                             </div>
                         </div>

@@ -1,14 +1,17 @@
 import './Header.css';
 import {LocIcon} from "../../assets/Icons.tsx";
+import {useTranslation} from "react-i18next";
 
 const Header = () => {
-    return (
+  const [t] = useTranslation();
+
+  return (
         <header>
             <div className='home-page'>
 {/*
                 <h1 className="banner-text">Cocoon Vuez Home</h1>
 */}
-                <h1 className="banner-text banner-text-title">Your new home in El Nido <LocIcon/></h1>
+                <h1 className="banner-text banner-text-title">{t("banner.title")} <LocIcon/></h1>
             </div>
         </header>
     )

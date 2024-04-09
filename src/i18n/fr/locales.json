@@ -1,0 +1,45 @@
+{
+  "menu": {
+    "house": "La Maison",
+    "gallery": "Gallerie d'images",
+    "location": "Emplacement",
+    "surroundings": "Alentours",
+    "contact": "Contact"
+  },
+  "banner": {
+    "title": "Un séjour de rêve à El Nido vous attends"
+  },
+  "calendar": {
+    "from": "De",
+    "to": "à",
+    "book": "Reserver !"
+  },
+  "section": {
+    "house": {
+      "title": "La Maison",
+      "accomodation": "l'Hébergement",
+      "services": "Services supplémentaires",
+      "features": {
+        "bed": "2 chambres",
+        "pool": "Piscine",
+        "bathroom": "Salle de bain",
+        "kitchen": "Cuisine équipée",
+        "people": "4 personnes",
+        "wifi": "Wifi",
+        "breakfast": "Petit-déjeuner inclus",
+        "air": "Air condtionnée",
+        "shower": "Douche chauce"
+      }
+    },
+    "gallery": {
+      "title": "Gallerie d'images"
+    },
+    "location": {
+      "title": "Emplacement"
+    },
+    "surrounding": {
+      "title": "Découvrez les alentours"
+    }
+  },
+  "footer": "Copyright © 2023, Tous droit réservés"
+}
