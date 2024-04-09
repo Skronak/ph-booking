@@ -4,7 +4,7 @@ export function GoogleMap() {
 
     return (
             <Container>
-                <h2>House location</h2>
+                <h2 className={"section-title"}>House location</h2>
                 <img style={{width: "19em"}} src={"/gmap.PNG"}/>
             </Container>
     )

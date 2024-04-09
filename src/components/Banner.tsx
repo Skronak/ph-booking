@@ -9,12 +9,11 @@ const Banner = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#section-features">Features</Nav.Link>
+                        <Nav.Link href="#section-features">The House</Nav.Link>
                         <Nav.Link href="#section-gallery">Gallery</Nav.Link>
                         <Nav.Link href="#section-gmap">Location</Nav.Link>
-                        <Nav.Link href="#section-explore">Explore</Nav.Link>
-                        <Nav.Link href="#contact">Contact</Nav.Link>
+                        <Nav.Link href="#section-explore">Surroundings</Nav.Link>
+                        <Nav.Link href="#section-contact">Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

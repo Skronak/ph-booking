@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/style.css';
-import './gallery.css';
 
 type Props = {
     images: {
@@ -30,7 +29,7 @@ export default function SwipeGallery(props: Props) {
     }, []);
 
     return (
-        <div id="section-gallery">
+        <>
             {props.images.map((image, index) => (
                 <a
                     href={image.largeURL}
@@ -43,6 +42,6 @@ export default function SwipeGallery(props: Props) {
                     <img src={image.thumbnailURL} alt="" />
                 </a>
             ))}
-        </div>
+        </>
     );
 }

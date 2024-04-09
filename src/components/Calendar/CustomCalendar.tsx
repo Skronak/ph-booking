@@ -13,7 +13,7 @@ export function CustomCalendar() {
             <Container>
                 <Row>
                     <Col>
-                        <label htmlFor="departure">Votre séjour</label></Col>
+                        <label htmlFor="departure">Dates</label></Col>
                     <Col md={3}>
                         <DatePicker
                             showIcon
