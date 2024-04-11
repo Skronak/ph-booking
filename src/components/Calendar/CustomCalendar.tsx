@@ -16,6 +16,15 @@ export function CustomCalendar() {
     navigate('/paiement');
   }
 
+  const getNbDayLabel = () => {
+    const nbDays = Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24));
+    if (nbDays==0) {
+      return `1 ${t("calendar.day")}`
+    } else if (nbDays > 0) {
+      return `${nbDays+1} ${t("calendar.day")} / ${nbDays} ${t("calendar.night")}`
+    }
+  }
+
   return (
     <div style={{backgroundColor: "white", padding: "1em 0"}}>
       <Container>
@@ -42,7 +51,7 @@ export function CustomCalendar() {
             />
           </Col>
           <Col >
-            <div>{Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24))} nuits</div>
+            <div>{getNbDayLabel()}</div>
           </Col>
          <Col md={3}>
             <Button variant="primary" onClick={handleButtonClick}>{t("calendar.book")}</Button>

@@ -12,7 +12,9 @@
   "calendar": {
     "from": "De",
     "to": "à",
-    "book": "Reserver !"
+    "book": "Reserver !",
+    "day": "jour(s)",
+    "night": "nuit(s)"
   },
   "section": {
     "house": {
