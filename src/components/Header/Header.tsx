@@ -8,9 +8,6 @@ const Header = () => {
   return (
         <header>
             <div className='home-page'>
-{/*
-                <h1 className="banner-text">Cocoon Vuez Home</h1>
-*/}
                 <h1 className="banner-text banner-text-title">{t("banner.title")} <LocIcon/></h1>
             </div>
         </header>

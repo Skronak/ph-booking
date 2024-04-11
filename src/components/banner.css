@@ -50,3 +50,12 @@
     border-radius: var(--bs-border-radius);
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.language-option {
+    width: 1.2em;
+    height: 1em;
+}
+
+.language-dropdown > .dropdown-menu {
+    min-width: 5em;
+}

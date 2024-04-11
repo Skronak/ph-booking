@@ -1,25 +1,25 @@
-import {Container, Nav, Navbar} from 'react-bootstrap';
+import {Container, Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import './banner.css';
 import {useTranslation} from "react-i18next";
 import {supportedLngs} from "../i18n/i18n.config.ts";
 
 const Banner = () => {
-    const [t,i18n] = useTranslation();
+    const [t, i18n] = useTranslation();
 
     return (
-            <Navbar bg="transparent" expand="lg">
+        <Navbar bg="transparent" expand="lg">
             <Container className={"navbar-container"}>
-                <select className="language-Select" aria-label="Default select example"
-                        value={i18n.resolvedLanguage}
-                        onChange={(e) => i18n.changeLanguage(e.target.value)}
+                <NavDropdown
+                    title={<img className={"language-option"} src={`/${i18n.language}.png`}/>}
+                    className={"language-dropdown"}
+                    onSelect={(e) => i18n.changeLanguage(e!)}
                 >
                     {Object.entries(supportedLngs).map(([code, name]) => (
-                        <option value={code} key={code}>
-                            {name}
-                        </option>
+                        <NavDropdown.Item eventKey={code} key={code}>
+                            <span>{name} </span><img className={"language-option"} src={`/${code}.png`}/>
+                        </NavDropdown.Item>
                     ))}
-                </select>
-
+                </NavDropdown>
                 <Navbar.Brand href="#">Vuez Cocoon House</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">

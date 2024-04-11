@@ -1,10 +1,14 @@
-import Home from "./pages/Home.tsx";
-import { BrowserRouter } from "react-router-dom";
+import HomePage from "./pages/HomePage.tsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import PaiementPage from "./pages/PaiementPage.tsx";
 
 const App = () => {
     return (
         <BrowserRouter>
-            <Home/>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/paiement" element={<PaiementPage/>}/>
+            </Routes>
         </BrowserRouter>
     )
 }

@@ -5,8 +5,8 @@ import locale_en from './en/locales.json';
 import locale_fr from './fr/locales.json';
 
 export const supportedLngs = {
-  en: "En",
-  fr: "Fr"
+  en: "EN",
+  fr: "FR"
 }
 
 i18next
