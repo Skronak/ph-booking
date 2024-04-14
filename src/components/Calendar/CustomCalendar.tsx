@@ -6,14 +6,33 @@ import "react-datepicker/dist/react-datepicker.css";
 import {Button, Col, Container} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
 
-export function CustomCalendar() {
-  const  [t] = useTranslation();
+type Props = {
+  start?: Date;
+  end?: Date;
+}
+
+export function CustomCalendar({start, end}: Props) {
+  const  [t, i18n] = useTranslation();
   const navigate = useNavigate();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(!!start? start : new Date());
+  const [endDate, setEndDate] = useState(!!end ? end : new Date());
+
+/*  const getUserLocal = () => {
+    const locale = (new Intl.NumberFormat()).resolvedOptions().locale;
+    console.log(locale);
+    return locale;
+  }*/
+
+  const getDateFormat = () => {
+    if (i18n.language == 'fr') {
+      return "dd/MM/yyyy"
+    } else {
+      return "MM/dd/yyyy";
+    }
+  }
 
   const handleButtonClick = () => {
-    navigate('/paiement');
+    navigate('/paiement', { state: {start: startDate, end: endDate}});
   }
 
   const getNbDayLabel = () => {
@@ -37,6 +56,8 @@ export function CustomCalendar() {
               selectsStart
               startDate={startDate}
               endDate={endDate}
+//              locale={getUserLocal()}
+              dateFormat={getDateFormat()}
             />
           </Col>
           <Col md={3}>
@@ -48,6 +69,8 @@ export function CustomCalendar() {
               startDate={startDate}
               endDate={endDate}
               minDate={startDate}
+              dateFormat={getDateFormat()}
+//              locale={getUserLocal()}
             />
           </Col>
           <Col >
