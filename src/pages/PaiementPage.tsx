@@ -1,6 +1,6 @@
 import Footer from "../components/Footer/Footer.tsx";
 import "./homePage.css"
-import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
+import {Button, Col, Container, Form, Row} from "react-bootstrap";
 import BannerPaiement from "../components/Banner/BannerPaiement.tsx";
 import {useState} from "react";
 import Header from "../components/Header/Header.tsx";
@@ -15,7 +15,7 @@ const PaiementPage = () => {
     const handleShow = () => setShow(true);
     const {state} = useLocation();
     const {start, end } = state;
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: { currentTarget: any; preventDefault: () => void; stopPropagation: () => void; }) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();

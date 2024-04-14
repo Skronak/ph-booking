@@ -4,7 +4,7 @@ import {useTranslation} from "react-i18next";
 import {supportedLngs} from "../../i18n/i18n.config.ts";
 
 const BannerPaiement = () => {
-    const [t, i18n] = useTranslation();
+    const [_t, i18n] = useTranslation();
 
     return (
         <Navbar bg="transparent" expand="lg">
