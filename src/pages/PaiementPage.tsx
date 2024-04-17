@@ -14,6 +14,9 @@ const PaiementPage = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [searchParams] = useSearchParams();
+    const startDate: string = searchParams.get("start")!;
+    const endDate: string = searchParams.get("end")!;
+
     const handleSubmit = (event: { currentTarget: any; preventDefault: () => void; stopPropagation: () => void; }) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -23,11 +26,12 @@ const PaiementPage = () => {
 
         setValidated(true);
     };
+
     return (
         <div className={"home home-container"}>
             <BannerPaiement/>
             <Header/>
-            <CustomCalendar start={searchParams.get("start")} end={searchParams.get("end")}/>
+            <CustomCalendar start={startDate} end={endDate}/>
             <Container style={{padding:"1em 0px"}}>
                 <Row className={"gy-5"} style={{ flexDirection: "row-reverse"}}>
                     <div className={"col-md-3 "}>

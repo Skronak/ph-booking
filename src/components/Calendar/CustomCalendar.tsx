@@ -1,14 +1,21 @@
 import './calendar-style.css';
-import {useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import {Button, Col, Container} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
+import {getDocs, collection} from "firebase/firestore";
+import {db} from "../../firebase/firebaseConfig.ts";
 
 type Props = {
   start?: string;
   end?: string;
+}
+
+type DateRange = {
+  start: Date;
+  end: Date;
 }
 
 export function CustomCalendar({start, end}: Props) {
@@ -16,6 +23,47 @@ export function CustomCalendar({start, end}: Props) {
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(start? new Date(start) : new Date());
   const [endDate, setEndDate] = useState(end ? new Date(end) : new Date());
+  const [excludedDate, setExcludedDate] = useState<Date[]>();
+  const bookingCollection = useMemo(()=>collection(db, "booking"), [db]);//prevent db acces each render
+
+  useEffect(() => {
+    loadDataFromDB();
+  }, []);
+
+  const getDaysArray = (s: Date,e: Date) => {
+    const res = [];
+    for (let d= new Date(s); d <= new Date(e);d.setDate(d.getDate()+1)) {
+      res.push(new Date(d));
+    }
+    return res;
+  };
+
+  const getExcludedDate = (range: DateRange[])  => {//range = couple (start end)
+    const dateToExclude: Date[] = range.map((r: DateRange) => getDaysArray(r.start, r.end)).flat();
+    setExcludedDate(dateToExclude);
+  }
+
+  const loadDataFromDB = async () => {
+    const sessionData = sessionStorage.getItem("bookedDates");
+    if (!sessionData) {
+      try {
+        const data = await getDocs(bookingCollection);
+        const filteredData = data.docs.map((doc) => ({
+          start: doc.get("dateArrival").toDate(),
+          end: doc.get("dateDeparture").toDate()
+        }));
+        getExcludedDate(filteredData);
+
+        sessionStorage.setItem("bookedDates", JSON.stringify(filteredData));
+        console.log('Data retrieved from DB');
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      const dateRangeSession = JSON.parse(sessionData);
+      getExcludedDate(dateRangeSession);
+    }
+  };
 
 /*  const getUserLocal = () => {
     const locale = (new Intl.NumberFormat()).resolvedOptions().locale;
@@ -57,9 +105,10 @@ export function CustomCalendar({start, end}: Props) {
               selected={startDate}
               onChange={(date) => setStartDate(date!)}
               selectsStart
+              minDate={new Date()}
               startDate={startDate}
               endDate={endDate}
-              excludeDates={[new Date(), new Date('2024-04-18')]}
+              excludeDates={excludedDate}
 //              locale={getUserLocal()}
               dateFormat={getDateFormat()}
             />
@@ -73,6 +122,7 @@ export function CustomCalendar({start, end}: Props) {
               startDate={startDate}
               endDate={endDate}
               minDate={startDate}
+              excludeDates={excludedDate}
               dateFormat={getDateFormat()}
 //              locale={getUserLocal()}
             />
