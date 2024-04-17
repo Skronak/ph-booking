@@ -6,15 +6,14 @@ import {useState} from "react";
 import Header from "../components/Header/Header.tsx";
 import {CustomCalendar} from "../components/Calendar/CustomCalendar.tsx";
 import ModalCG from "../components/GeneralCondition/ModalCG.tsx";
-import {useLocation} from "react-router-dom";
+import {useSearchParams} from "react-router-dom";
 
 const PaiementPage = () => {
     const [validated, setValidated] = useState(false);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const {state} = useLocation();
-    const {start, end } = state;
+    const [searchParams] = useSearchParams();
     const handleSubmit = (event: { currentTarget: any; preventDefault: () => void; stopPropagation: () => void; }) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -24,39 +23,22 @@ const PaiementPage = () => {
 
         setValidated(true);
     };
-
     return (
         <div className={"home home-container"}>
             <BannerPaiement/>
             <Header/>
-            <CustomCalendar start={start} end={end}/>
+            <CustomCalendar start={searchParams.get("start")} end={searchParams.get("end")}/>
             <Container style={{padding:"1em 0px"}}>
-                <Row mb-12>
-                    <div className={"col-md-9"}>
-                        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                            <Form.Control required type="text" placeholder="Nom" />
-                            <Form.Control required type="text" placeholder="Prenom" />
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" placeholder="name@example.com" />
-                            </Form.Group>
-                            <Form.Control required type="text" placeholder="Phone" />
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>Example textarea</Form.Label>
-                                <Form.Control as="textarea" rows={3} />
-                            </Form.Group>
-                            <Button type="submit">Submit form</Button>
-                        </Form>
-                    </div>
-                    <div className={"col-md-3"}>
+                <Row className={"gy-5"} style={{ flexDirection: "row-reverse"}}>
+                    <div className={"col-md-3 "}>
                         <h2>Votre reservation</h2>
                         <hr/>
                         <p>Date d'arrivée</p>
                         <p>12/04/2024</p>
                         <p>Date de départ</p>
                         <p>12/04/2024</p>
-                        <p>Nombre de nuités</p>
-                        <p>2</p>
+                        <p>Nombre de nuités: 2</p>
+                        <hr/>
                         <Row>
                             <Col>Montant Total</Col>
                             <Col>100eur</Col>
@@ -74,10 +56,36 @@ const PaiementPage = () => {
                             <Col>100eur</Col>
                         </Row>
                     </div>
+                    <div className={"col-md-9"} style={{backgroundColor: "#e6e6e2"}}>
+                        <h1>Informations de contact</h1>
+                        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+                            <Form.Group className="mb-3" controlId="form.nom">
+                                <Form.Label>Nom</Form.Label>
+                                <Form.Control required type="text" placeholder="Nom"/>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="form.prenom">
+                                <Form.Label>Prenom</Form.Label>
+                                <Form.Control required type="text" placeholder="prenom"/>
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="form.mail">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control required type="email" placeholder="name@example.com" />
+                            </Form.Group>
+                            <Form.Control required type="text" placeholder="Phone" />
+                            <Form.Check
+                                required={true}
+                                type={'checkbox'}
+                                id={`default-checkbox}`}
+                                label={<div>J'accepte les <a href="#" onClick={handleShow}>conditions générales</a></div>}
+                            />
+                            <hr/>
+                            <Button type="submit">Payer</Button>
+                        </Form>
+                    </div>
+
                 </Row>
+                <ModalCG show={show} handleClose={handleClose}/>
             </Container>
-            <ModalCG show={show} handleClose={handleClose}/>
-            <input type={"checkbox"}/>J'accepte les <a href="#" onClick={handleShow}>conditions générales</a>
             <Footer/>
         </div>
     )

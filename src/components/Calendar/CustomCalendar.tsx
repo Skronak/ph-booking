@@ -7,15 +7,15 @@ import {Button, Col, Container} from "react-bootstrap";
 import {useTranslation} from "react-i18next";
 
 type Props = {
-  start?: Date;
-  end?: Date;
+  start?: string;
+  end?: string;
 }
 
 export function CustomCalendar({start, end}: Props) {
   const  [t, i18n] = useTranslation();
   const navigate = useNavigate();
-  const [startDate, setStartDate] = useState(!!start? start : new Date());
-  const [endDate, setEndDate] = useState(!!end ? end : new Date());
+  const [startDate, setStartDate] = useState(start? new Date(start) : new Date());
+  const [endDate, setEndDate] = useState(end ? new Date(end) : new Date());
 
 /*  const getUserLocal = () => {
     const locale = (new Intl.NumberFormat()).resolvedOptions().locale;
@@ -32,7 +32,10 @@ export function CustomCalendar({start, end}: Props) {
   }
 
   const handleButtonClick = () => {
-    navigate('/paiement', { state: {start: startDate, end: endDate}});
+    navigate({
+      pathname: '/paiement',
+      search: `?start=${startDate.toISOString()}&end=${endDate.toISOString()}`
+    });
   }
 
   const getNbDayLabel = () => {
@@ -56,6 +59,7 @@ export function CustomCalendar({start, end}: Props) {
               selectsStart
               startDate={startDate}
               endDate={endDate}
+              excludeDates={[new Date(), new Date('2024-04-18')]}
 //              locale={getUserLocal()}
               dateFormat={getDateFormat()}
             />
@@ -77,7 +81,7 @@ export function CustomCalendar({start, end}: Props) {
             <div>{getNbDayLabel()}</div>
           </Col>
          <Col md={3}>
-            <Button variant="primary" onClick={handleButtonClick}>{t("calendar.book")}</Button>
+           <Button variant="primary" onClick={handleButtonClick}>{t("calendar.book")}</Button>
           </Col>
         </div>
       </Container>
