@@ -1,0 +1,13 @@
+.gmap {
+    height: 30em;
+    width: 100%;
+    position: relative;
+}
+
+.control-panel {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+    max-width: 50%;
+}
