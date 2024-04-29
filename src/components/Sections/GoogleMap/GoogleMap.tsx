@@ -1,12 +1,10 @@
 import {Container} from "react-bootstrap";
-import {useTranslation} from "react-i18next";
 import React, {useEffect} from "react";
 import {APIProvider, Map, Marker} from "@vis.gl/react-google-maps";
 import "./google-map.css";
 import ControlPanel from "./ControlPanel.tsx";
 
 export function GoogleMap() {
-    const [t] = useTranslation();
     const ref = React.useRef<HTMLDivElement>(null);
     const [map, setMap] = React.useState<google.maps.Map>();
 
