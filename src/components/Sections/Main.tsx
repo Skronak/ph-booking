@@ -1,26 +1,29 @@
 import './main.css';
-import SectionVoyage from "./SectionVoyage/SectionVoyage.tsx";
 import {CustomCalendar} from "../Calendar/CustomCalendar.tsx";
-import {GoogleMap} from "./GoogleMap/GoogleMap.tsx";
+import {SectionGoogleMap} from "./GoogleMap/SectionGoogleMap.tsx";
 import SectionHouse from "./SectionHouse/SectionHouse.tsx";
-import SectionGallery from "./SectionGallery/SectionGallery.tsx";
+import SectionServices from "./SectionServices/SectionServices.tsx";
 
 const Main = () => {
     return (
         <>
             <CustomCalendar/>
-            <div className={"section-uneven"} id="section-features">
+            <div id="section-features" className={"section-uneven"}>
                 <SectionHouse/>
             </div>
-            <div id="section-gallery" className={"section-even"}>
-                <SectionGallery/>
+            <div id="section-services" className={"section-even"}>
+                <SectionServices/>
             </div>
+
             <div id="section-gmap" className={"section-uneven"}>
-                <GoogleMap/>
+                <SectionGoogleMap/>
             </div>
-            <div id="section-explore" className={"section-even"}>
+
+            {/*
+            <div id="section-explore" className={"section-uneven"}>
                 <SectionVoyage/>
             </div>
+*/}
         </>
 
     )

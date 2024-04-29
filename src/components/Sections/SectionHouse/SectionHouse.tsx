@@ -1,6 +1,7 @@
 import {Card, Col, Container, Row} from "react-bootstrap";
 import './sectionHouse.css';
 import {useTranslation} from "react-i18next";
+import SectionGallery from "../SectionGallery/SectionGallery.tsx";
 
 export default function SectionHouse() {
     const [t] = useTranslation();
@@ -10,20 +11,26 @@ export default function SectionHouse() {
             <h2 className={"section-title"}>{t("section.house.title")}</h2>
             <Row className={"g-3"}>
                 <Col md={5}>
-                    <img style={{width: "100%"}} src={"/hpreview.png"}/>
+                    <img className={"preview"} src={"/hpreview.png"}/>
                 </Col>
                 <Col>
                     <Row className={"g-3"}>
-                        <h2 className={"section-subtitle"}>{t("section.house.accomodation")}</h2>
-                        <div className={"col-12"}>
+                        <div className={"col-6"}>
+                            <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
+                                <span className="material-symbols-outlined">groups</span>
+                                <div>{t("section.house.features.people")}</div>
+                            </Card>
+                        </div>
+                        <div className={"col-6"}>
                             <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
                                 <span className="material-symbols-outlined">width</span>
-                                <div>80 m²</div>
+                                <div>{t("section.house.features.size")}</div>
                             </Card>
                         </div>
                         <div className={"col-12"}>
                             <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
-                                <span className="material-symbols-outlined">bed</span>
+                                <span><span className="material-symbols-outlined">bed</span>+<span
+                                    className="material-symbols-outlined">bed</span></span>
                                 <div>{t("section.house.features.bed")}</div>
                             </Card>
                         </div>
@@ -33,27 +40,12 @@ export default function SectionHouse() {
                                 <div>{t("section.house.features.pool")}</div>
                             </Card>
                         </div>
-                        <Col>
-                            <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
-                                <span className="material-symbols-outlined">shower</span>
-                                <div>{t("section.house.features.bathroom")}</div>
-                            </Card>
-                        </Col>
-                        <Col>
+                    <Col>
                             <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
                                 <span className="material-symbols-outlined">flatware</span>
                                 <div>{t("section.house.features.kitchen")}</div>
                             </Card>
                         </Col>
-                    </Row>
-                    <Row className={"g-3"}>
-                        <h2 className={"section-subtitle"} style={{paddingTop: "1em"}}>{t("section.house.services")}</h2>
-                        <div className={"col-12"}>
-                            <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
-                                <span className="material-symbols-outlined">groups</span>
-                                <div>{t("section.house.features.people")}</div>
-                            </Card>
-                        </div>
                         <div className={"col-6"}>
                             <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
                                 <span className="material-symbols-outlined">wifi</span>
@@ -62,8 +54,8 @@ export default function SectionHouse() {
                         </div>
                         <div className={"col-6"}>
                             <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
-                                <span className="material-symbols-outlined">bakery_dining</span>
-                                <div>{t("section.house.features.breakfast")}</div>
+                                <span className="material-symbols-outlined">shower</span>
+                                <div>{t("section.house.features.shower")}</div>
                             </Card>
                         </div>
                         <Col>
@@ -72,15 +64,14 @@ export default function SectionHouse() {
                                 <div>{t("section.house.features.air")}</div>
                             </Card>
                         </Col>
-                        <Col>
-                            <Card style={{margin: "0 1em", textAlign: "center", padding: "0.5em 0"}}>
-                                <span className="material-symbols-outlined">heat</span>
-                                <div>{t("section.house.features.shower")}</div>
-                            </Card>
-                        </Col>
                     </Row>
                 </Col>
             </Row>
+            <div className={"pt-3"}/>
+            <h2 className={"section-subtitle"}>Plus de photos</h2>
+            <div id="section-gallery">
+                <SectionGallery/>
+            </div>
         </Container>
     );
 }

@@ -1,7 +1,8 @@
 {
   "menu": {
-    "house": "The House",
-    "gallery": "Pictures",
+    "house": "Villa Pinya",
+    "service": "Accomodation features",
+    "gallery": "Photos",
     "location": "Location",
     "surroundings": "Surroundings",
     "contact": "Contact"
@@ -18,20 +19,26 @@
   },
   "section": {
     "house": {
-      "title": "The House",
+      "title": "Villa pinya",
       "accomodation": "Accomodations",
       "services": "Additionnal services",
       "features": {
-        "bed": "2 bedrooms",
-        "pool": "Pool",
-        "bathroom": "Bathroom",
+        "bed": "2 bedrooms with King Size bed",
+        "pool": "Private pool",
         "kitchen": "Fitted kitchen",
         "people": "4 people",
-        "wifi": "Wifi",
+        "size": "200m2",
+        "wifi": "High-speed Internet",
         "breakfast": "Breakfast included",
         "air": "Air conditioner",
         "shower": "Hot shower"
       }
+    },
+    "services": {
+      "title": "Services",
+      "water": "distributeur eau potable",
+      "massage": "Massage à domicile",
+      "car": "Service de location de véhicule"
     },
     "gallery": {
       "title": "Pictures"

@@ -11,7 +11,7 @@ const Banner = () => {
             <Container className={"navbar-container"}>
                 <NavDropdown
                     title={<img className={"language-option"} src={`/${i18n.language}.png`}/>}
-                    className={"language-dropdown"}
+                    className={"language-dropdown pe-2"}
                     onSelect={(e) => i18n.changeLanguage(e!)}
                 >
                     {Object.entries(supportedLngs).map(([code, name]) => (
@@ -20,14 +20,14 @@ const Banner = () => {
                         </NavDropdown.Item>
                     ))}
                 </NavDropdown>
-                <Navbar.Brand href="/">Vuez Cocoon House</Navbar.Brand>
+                <Navbar.Brand className={"d-md-none"} href="/">{t("menu.title")}</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="#section-features">{t("menu.house")}</Nav.Link>
                         <Nav.Link href="#section-gallery">{t("menu.gallery")}</Nav.Link>
                         <Nav.Link href="#section-gmap">{t("menu.location")}</Nav.Link>
-                        <Nav.Link href="#section-explore">{t("menu.surroundings")}</Nav.Link>
+                        <Nav.Link href="#section-services">{t("menu.service")}</Nav.Link>
                         <Nav.Link href="#section-contact">{t("menu.contact")}</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

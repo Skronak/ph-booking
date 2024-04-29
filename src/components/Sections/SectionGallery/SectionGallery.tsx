@@ -1,14 +1,9 @@
-import {Container} from "react-bootstrap";
-import SwipeGallery from "../../Gallery/SwipeGallery.tsx";
+import SwipeGallery from "./Gallery/SwipeGallery.tsx";
 import './gallery.css';
-import {useTranslation} from "react-i18next";
 
 export default function SectionGallery() {
-    const [t] = useTranslation();
 
     return (
-        <Container>
-            <h2 className={"section-title"}>{t("section.gallery.title")} (9)</h2>
             <SwipeGallery
                 images={[
                     {
@@ -85,6 +80,5 @@ export default function SectionGallery() {
                     },
                 ]}
             />
-        </Container>
     );
 }

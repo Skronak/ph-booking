@@ -18,3 +18,9 @@
     font-family: 'happy', serif;
     text-align: center;
 }
+
+.preview {
+    width: 70%;
+    text-align: center;
+    margin-left: 15%;
+}
