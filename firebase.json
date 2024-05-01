@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "bookingphfront",
     "public": "dist",
     "ignore": [
       "firebase.json",

@@ -5,7 +5,7 @@ const Footer = () => {
     const [t] = useTranslation();
 
     return (
-        <div id={"section-contact"}>
+        <div id={"section-contact section-even" }>
             <footer className="footer-section">
                 <div className="container">
                     <div className="footer-cta pt-5 pb-5">

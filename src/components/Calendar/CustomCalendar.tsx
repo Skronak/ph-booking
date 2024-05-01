@@ -24,7 +24,7 @@ export function CustomCalendar({start, end}: Props) {
   const [startDate, setStartDate] = useState(start? new Date(start) : new Date());
   const [endDate, setEndDate] = useState(end ? new Date(end) : new Date());
   const [excludedDate, setExcludedDate] = useState<Date[]>();
-  const bookingCollection = useMemo(()=>collection(db, "booking"), [db]);//prevent db acces each render
+  const bookingCollection = useMemo(()=>collection(db, "orders"), [db]);//prevent db acces each render
 
   useEffect(() => {
     loadDataFromDB();

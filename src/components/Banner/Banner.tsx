@@ -20,7 +20,7 @@ const Banner = () => {
                         </NavDropdown.Item>
                     ))}
                 </NavDropdown>
-                <Navbar.Brand className={"d-md-none"} href="/">{t("menu.title")}</Navbar.Brand>
+                <Navbar.Brand className={"d-md-none"} href="/">{t("menu.title")}<img className={"main-logo"} src={`/ananas.png`}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
